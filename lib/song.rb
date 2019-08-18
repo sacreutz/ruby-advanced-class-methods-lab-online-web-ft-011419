@@ -45,10 +45,12 @@ class Song
   def self.new_from_filename(filename)
     array = filename.split(" - ")
     song = self.new 
-    song.name = array[1]
-    artist_name = array[0]
-    artist = artist_name[0...10]
-    song.artist_name = artist
+    name = array[1]
+    name2 = name[0...10]
+    song.name = name2
+    
+    
+    song.artist_name = array[0]
     song
   end
 
