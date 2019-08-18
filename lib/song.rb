@@ -48,11 +48,21 @@ class Song
     name = array[1]
     name2 = name[0...-4]
     song.name = name2
-    
-    
     song.artist_name = array[0]
     song
   end
+  
+  def self.create_from_filename(filename)
+    array = filename.split(" - ")
+    song = self.new 
+    name = array[1]
+    name2 = name[0...-4]
+    song.name = name2
+    song.artist_name = array[0]
+    @@all << song
+    song
+  end
+    
 
   
 end
